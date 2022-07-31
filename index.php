@@ -18,8 +18,10 @@
                 <img class="eik-slide-img" src="<?php the_post_thumbnail_url()?>" alt="<?php the_title()?>" />
                 <div class="eik-slide-textblock">
                     <h1 class="eik-slide-textblock-title"><?php the_title()?></h1>
-                    <p class="eik-slide-textblock-text"><?php the_content()?></p>
-                    <a href="http://www.google.de" class="eik-slide-textblock-btn">weiterlesen...</a>
+                    <div class="eik-slide-textblock-text">
+                        <?php the_content()?></p>
+                    </div>
+                    <a href="" class="eik-slide-textblock-btn">weiterlesen...</a>
                 </div>
             </div>
         </div>
@@ -28,4 +30,6 @@
     </div>
 </section>
 
-<?php get_footer() ?>
+<?php get_footer()?>
+
+<?php

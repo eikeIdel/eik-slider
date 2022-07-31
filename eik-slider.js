@@ -1,7 +1,7 @@
 jQuery(document).ready(function () {
   jQuery(".eik-slider").slick({
     infinite: true,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
     variableWidth: true,
