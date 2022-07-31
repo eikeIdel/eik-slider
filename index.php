@@ -21,7 +21,7 @@
                     <div class="eik-slide-textblock-text">
                         <?php the_content()?></p>
                     </div>
-                    <a href="" class="eik-slide-textblock-btn">weiterlesen...</a>
+                    <a href="<?php the_permalink() ?>" class="eik-slide-textblock-btn">weiterlesen...</a>
                 </div>
             </div>
         </div>
@@ -31,5 +31,3 @@
 </section>
 
 <?php get_footer()?>
-
-<?php
