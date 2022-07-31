@@ -1,0 +1,169 @@
+:root,
+::before,
+::after {
+  /* SLIDER-COLORs */
+  --eik-slider-primary-color: rgb(107, 38, 101);
+  --eik-slider-secondary-color: rgb(107, 38, 101, 0.2);
+  /* SLIDER */
+  --eik-slider-width: 100vw;
+  --eik-slider-height: 50vh;
+  --eik-slider-padding: 0 0;
+  --eik-slider-margin: 2rem 0;
+  --eik-slider-bg-color: none;
+  /* SINGLE SLIDE */
+  --eik-slide-width: 50vw;
+  --eik-slide-padding: 1rem;
+  --eik-slide-margin-x: 0.5rem;
+  --eik-slide-margin-y: 0;
+  --eik-slide-bg-color: var(--eik-slider-secondary-color);
+  /* PREV/NEXT BUTTON */
+  --eik-slider-arrow-size: 3rem;
+  --eik-slider-arrow-color: var(--eik-slider-primary-color);
+  /* TITLE */
+  --eik-slider-title-color: var(--eik-slider-primary-color);
+  --eik-slider-text-color: var(--eik-slider-primary-color);
+}
+
+.eik-slider-section * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.eik-slider-section {
+  overflow-x: hidden;
+  width: var(--eik-slider-width);
+  margin: 0 auto;
+}
+
+.eik-slider > .slick-arrow {
+  color: var(--eik-slider-arrow-color);
+  font-size: var(--eik-slider-arrow-size);
+  background: none;
+  border: none;
+}
+
+.eik-arrow-btn.prev-slide {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: calc(
+    (var(--eik-slider-width) - var(--eik-slide-width)) / 2 -
+      var(--eik-slide-margin-x)
+  );
+  z-index: 2;
+}
+
+.eik-arrow-btn.next-slide {
+  position: absolute;
+  top: 50%;
+  transform: translate(50%, -50%);
+  right: calc(
+    (var(--eik-slider-width) - var(--eik-slide-width)) / 2 -
+      var(--eik-slide-margin-x)
+  );
+  z-index: 2;
+}
+
+.eik-slider {
+  background-color: var(--eik-slider-bg-color);
+  padding: var(--eik-slider-padding);
+  margin: var(--eik-slider-margin);
+}
+
+.eik-slider::before {
+  content: "";
+  position: absolute;
+  width: calc(
+    (var(--eik-slider-width) - var(--eik-slide-width)) / 2 -
+      var(--eik-slide-margin-x) * 2
+  );
+  height: 100%;
+  z-index: 1;
+
+  background: -moz-linear-gradient(
+    left,
+    rgba(255, 255, 255, 1) 15%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 255, 255, 1) 15%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 15%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+.eik-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(
+    (var(--eik-slider-width) - var(--eik-slide-width)) / 2 -
+      var(--eik-slide-margin-x) * 2
+  );
+  height: 100%;
+  z-index: 1;
+
+  background: -moz-linear-gradient(
+    right,
+    rgba(255, 255, 255, 1) 15%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    right,
+    rgba(255, 255, 255, 1) 15%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1) 15%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+.eik-slider > .slick-list {
+  overflow: visible;
+}
+
+.eik-slide-wrapper {
+  height: var(--eik-slider-height);
+}
+
+.eik-slide {
+  /* width: 100%; */
+  width: var(--eik-slide-width);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-style: solid;
+  border-width: 2px 2px;
+  padding: var(--eik-slide-padding);
+  margin: var(--eik-slide-margin-y) var(--eik-slide-margin-x);
+  background-color: var(--eik-slide-bg-color);
+}
+
+.eik-slide-img {
+  flex-grow: 0.5;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.eik-slide-textblock {
+  flex-grow: 2;
+}
+
+.eik-slide-textblock-title {
+}
+
+.eik-slide-textblock-text {
+}
