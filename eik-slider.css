@@ -12,14 +12,14 @@
   --eik-slider-margin: 2rem 0;
   --eik-slider-bg-color: none;
   /* SINGLE SLIDE */
-  --eik-slide-width: 50vw;
+  --eik-slide-width: 75vw;
   --eik-slide-padding: 0;
   --eik-slide-margin-x: 2rem;
   --eik-slide-margin-y: 0;
   --eik-slide-gap: 0.5rem;
   --eik-slide-bg-color: none;
   /* PREV/NEXT BUTTON */
-  --eik-slider-arrow-size: 2.5rem;
+  --eik-slider-arrow-size: 8rem;
   --eik-slider-arrow-color: var(--eik-slider-primary-color);
   /* TITLE */
   --eik-slide-title-size: 1.1rem;
@@ -31,6 +31,8 @@
   --eik-slide-btn-height: 2rem;
   --eik-slide-btn-width: 20rem;
   --eik-slide-btn-color: var(--eik-slider-primary-color);
+
+  
 }
 
 .eik-slider-section * {
@@ -50,28 +52,32 @@
   font-size: var(--eik-slider-arrow-size);
   background: none;
   border: none;
+  opacity: 0.15;
 }
 
 .eik-arrow-btn.prev-slide {
   position: absolute;
-  top: 50%;
+  /* top: 50%;
   transform: translate(-50%, -50%);
   left: calc(
     (var(--eik-slider-width) - var(--eik-slide-width)) / 2 -
       var(--eik-slide-margin-x)
-  );
+  ); */
+  top: calc(var(--eik-slider-height) / 2 + var(--eik-slide-title-size));
+  transform: translate(20%, -20%);
+  left: 0%;
   z-index: 2;
 }
 
+
 .eik-arrow-btn.next-slide {
   position: absolute;
-  top: 50%;
-  transform: translate(50%, -50%);
-  right: calc(
-    (var(--eik-slider-width) - var(--eik-slide-width)) / 2 -
-      var(--eik-slide-margin-x)
-  );
+  
+  top: calc(var(--eik-slider-height) / 2 + 1 * var(--eik-slide-title-size));
+  transform: translate(-20%, -20%);
+  right: 0%;
   z-index: 2;
+ 
 }
 
 .eik-slider {
@@ -147,11 +153,10 @@
 }
 
 .eik-slide {
-  /* width: 100%; */
   width: var(--eik-slide-width);
-  /* aspect-ratio: 20/11; */
   height: 100%;
   display: flex;
+  flex-direction: column;
   gap: 1rem;
 
   padding: var(--eik-slide-padding);
@@ -160,9 +165,9 @@
 }
 
 .eik-slide-img {
-  flex-grow: 0.5;
-  max-width: 50%;
-  max-height: 100%;
+  
+  max-width: 100%;
+  aspect-ratio: 16/9;
   object-fit: cover;
   border-radius: 30px;
 }
@@ -179,42 +184,40 @@
 .eik-slide-textblock-text {
   font-size: var(--eik-slide-text-size);
   color: var(--eik-slide-text-color);
-  height: calc(
-    var(--eik-slider-height) - var(--eik-slide-title-size) -
-      var(--eik-slide-btn-height) - 2 * var(--eik-slide-gap)
+  height:calc(
+    var(--eik-slider-height) - var(--eik-slide-width) / (16 / 9 ) - var(--eik-slide-title-size) - var(--eik-slide-btn-height)
   );
+
   overflow: hidden;
 }
 
 .eik-slide-textblock-text::after {
   content: "";
   position: absolute;
-  width: calc(0.5 * var(--eik-slide-width));
-  height: 25%;
-  top: calc(
-    var(--eik-slider-height) - var(--eik-slide-title-size) -
-      var(--eik-slide-btn-height) - 2 * var(--eik-slide-gap) - 10%
-  );
+  width: var(--eik-slide-width);
+  height:2.5em;
+  bottom:0;
 
   background: -moz-linear-gradient(
     0deg,
-    rgba(255, 255, 255, 1) 10%,
+    rgba(255, 255, 255, 1) 0%,
     rgba(255, 255, 255, 0) 100%
   );
   background: -webkit-linear-gradient(
     0deg,
-    rgba(255, 255, 255, 1) 10%,
+    rgba(255, 255, 255, 1) 0%,
     rgba(255, 255, 255, 0) 100%
   );
   background: linear-gradient(
     0deg,
-    rgba(255, 255, 255, 1) 10%,
+    rgba(255, 255, 255, 1) 0%,
     rgba(255, 255, 255, 0) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
 }
 
 .eik-slide-textblock-text > p {
+  width:100%;
 }
 
 .eik-slide-textblock-btn {
@@ -238,4 +241,109 @@
 .eik-slide-textblock-btn:focus {
   color: white;
   background-color: var(--eik-slide-btn-color);
+}
+
+@media only screen and (min-width: 400px) {
+  :root{
+    --eik-slider-height:50vh;
+    --eik-slide-width:83vw;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  :root{
+    --eik-slider-height:25vh;
+    --eik-slider-arrow-size:3rem;   
+  }
+
+  .eik-slider > .slick-arrow {
+    opacity: 1;
+  }
+  
+  .eik-arrow-btn.prev-slide {
+    top: 50%;
+    transform: translate(0%, -50%);
+    left: calc(      (var(--eik-slider-width) - var(--eik-slide-width)) / 2 -        var(--eik-slide-margin-x)    );
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    -o-transform: translate(0%, -50%);
+}
+
+.eik-arrow-btn.next-slide{
+  top: 50%;
+  transform: translate(0%, -50%);
+  right: calc(    (var(--eik-slider-width) - var(--eik-slide-width)) / 2 -      var(--eik-slide-margin-x)  );
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+}
+
+  .eik-slide{
+      flex-direction: row;
+  }
+
+  .eik-slide-img{
+      max-height: 100%;
+      max-width: 50%;
+  }
+
+  .eik-slide-textblock-text {
+    max-width:80%;
+    height: calc(
+      var(--eik-slider-height) - var(--eik-slide-title-size) -
+        var(--eik-slide-btn-height) - 2 * var(--eik-slide-gap)
+    );
+  }
+
+  .eik-slide-textblock-text::after{
+    width: calc(0.5 * var(--eik-slide-width) + 1rem); 
+  height: 51%;
+  bottom: calc(var(--eik-slide-btn-height) + 0.5rem);
+
+  }
+}
+@media only screen and (min-width: 750px) {
+  :root{
+    --eik-slide-padding: 0 2rem;
+  
+  }
+
+}
+/* Wird hier der Wert geändert, muss auch im JS (eik-slider.js) der breakpint für den slick slider geändert werden! */
+@media only screen and (min-width: 1200px) {
+  :root{
+    --eik-slider-height:28vh;
+    --eik-slide-width:45vw;
+    --eik-slide-padding: 0 0rem;
+  }
+
+  .eik-arrow-btn.prev-slide{
+    transform: translate(-100%,-50%);
+    -webkit-transform: translate(-100%,-50%);
+    -moz-transform: translate(-100%,-50%);
+    -ms-transform: translate(-100%,-50%);
+    -o-transform: translate(-100%,-50%);
+}
+
+  .eik-arrow-btn.next-slide{
+    transform: translate(-100%,-50%)  ;
+    -webkit-transform: translate(-100%,-50%)  ;
+    -moz-transform: translate(-100%,-50%)  ;
+    -ms-transform: translate(-100%,-50%)  ;
+    -o-transform: translate(-100%,-50%)  ;
+}
+
+.eik-slide-textblock-text::after{
+  width: calc(0.25 * var(--eik-slide-width)); 
+
+}
+}
+
+@media only screen and (min-width: 1200px) {
+  :root{
+   
+    --eik-slide-width:40vw;
+  }
 }
