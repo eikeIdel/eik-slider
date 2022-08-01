@@ -300,7 +300,7 @@
   .eik-slide-textblock-text::after{
     width: calc(0.5 * var(--eik-slide-width) + 1rem); 
   height: 51%;
-  bottom: calc(var(--eik-slide-btn-height) + 0.5rem);
+  bottom: calc(var(--eik-slide-btn-height) + 0.15rem);
 
   }
 }
