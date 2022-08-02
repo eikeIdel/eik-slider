@@ -5,6 +5,7 @@ jQuery(document).ready(function () {
     slidesToScroll: 1,
     centerMode: true,
     variableWidth: true,
+    autoplay: true,
     arrows: true,
     prevArrow:
       '<button class="eik-arrow-btn prev-slide" aria-label="Next" type="button"><</button>',
