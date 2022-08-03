@@ -33,7 +33,7 @@
   --eik-slide-text-h1-display: none; /* display property for h1 from the_content() */
   /* "MEHR INFO" - BUTTON */
   --eik-slide-btn-height: 2rem;
-  --eik-slide-btn-width: 20rem;
+  --eik-slide-btn-width: 8rem;
   --eik-slide-btn-color: var(--eik-slider-primary-color);
 }
 
@@ -181,6 +181,7 @@
 .eik-slide-textblock {
   display: flex;
   flex-direction: column;
+  height: calc(var(--eik-slider-height) - var(--eik-slide-width) / (16 / 9));
 }
 
 .eik-slide-textblock-text {
@@ -240,6 +241,7 @@
   font-size: var(--eik-slide-text-size);
   padding: 0.2em 0.3em;
   /* margin: 4px; */
+  width:var(--eik-slide-btn-width)
 
   box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 20%);
 }
