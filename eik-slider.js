@@ -8,7 +8,7 @@ jQuery(document).ready(function () {
     autoplay: true,
     arrows: true,
     prevArrow:
-      '<button class="eik-arrow-btn prev-slide" aria-label="Next" type="button"><</button>',
+      '<button class="eik-arrow-btn prev-slide" aria-label="Next" type="button"><i class="fa-solid fa-chevron-left"></i></button>',
     nextArrow:
       '<button class="eik-arrow-btn next-slide" aria-label="Previous" type="button">></button>',
 
