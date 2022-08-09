@@ -5,12 +5,11 @@ jQuery(document).ready(function () {
     slidesToScroll: 1,
     centerMode: true,
     variableWidth: true,
-    autoplay: true,
+    autoplay: false,
+    autoplaySpeed: 3000,
     arrows: true,
-    prevArrow:
-      '<button class="eik-arrow-btn prev-slide" aria-label="Next" type="button"><i class="fa-solid fa-chevron-left"></i></button>',
-    nextArrow:
-      '<button class="eik-arrow-btn next-slide" aria-label="Previous" type="button">></button>',
+    nextArrow: `<button class="eik-arrow-btn next-slide" aria-label="Next" type="button"><img src="" alt=">"></button>`,
+    prevArrow: `<button class="eik-arrow-btn prev-slide" aria-label="Previous" type="button"><img src="" alt="<"></button>`,
 
     responsive: [
       {
