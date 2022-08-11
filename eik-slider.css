@@ -382,3 +382,9 @@ a.eik-slide-textblock-btn:focus {
     --eik-slide-text-size: 1.1rem;
   }
 }
+@media only screen and (min-width: 2000px) {
+  .eik-slider {
+    height: var(--eik-slider-height);
+    overflow-y: hidden;
+  }
+}
